@@ -6,9 +6,9 @@ Deployed App on Heroku: https://mbs-analysis.herokuapp.com/
 ## Screenshots
 ![Screenshot 1](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot1.png)
 
-![Screenshot 5](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot5.png)
-
 ![Screenshot 3](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot3.png)
+
+![Screenshot 5](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot5.png)
 
 
 ## Goals
