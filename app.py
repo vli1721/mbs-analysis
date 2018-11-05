@@ -36,7 +36,9 @@ def generate_bonus_2_graph(df_list, graph_type):
 ########################################################################################################################
 #                        					Metadata and Analyzed CSV Files                   						   #
 ########################################################################################################################
-app = dash.Dash()
+app = dash.Dash(__name__)
+server = app.server # the Flask app
+
 # Set Web App Title
 app.title = 'Metro Bike Share Data Analysis'
 
