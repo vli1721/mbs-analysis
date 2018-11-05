@@ -4,11 +4,11 @@ Web app for analyzing bike share data for the 2018 Capital One SWE Summit Challe
 Deployed App on Heroku: https://mbs-analysis.herokuapp.com/  
 
 ## Screenshots
-* ![Screenshot 1](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot1.png)
+![Screenshot 1](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot1.png)
 
-* ![Screenshot 2](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot2.png)
+![Screenshot 2](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot2.png)
 
-* ![Screenshot 3](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot3.png)
+![Screenshot 3](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot3.png)
 
 
 ## Goals
