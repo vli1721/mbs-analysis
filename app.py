@@ -457,6 +457,11 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
 		+ 'and Station #3005 around Hours 17-19. Metro Bike Share should also transfer bikes from '
 		+ 'Station #3005 to Station #3014 around Hours 7-8.',
     	style=text_style),
+
+    html.Div(children='To avoid cluttering, Station #4108 is not displayed in these graphs. '
+        + 'However, data points for Station #4108 are available in the CSV files.',
+        style=text_style),
+
 	html.Hr(),
 
 
