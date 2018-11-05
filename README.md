@@ -8,7 +8,6 @@ Deployed App on Heroku: https://mbs-analysis.herokuapp.com/
 
 * ![Screenshot 2](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot2.png)
 
-
 * ![Screenshot 3](https://github.com/vli1721/capital-one-challenge-2018/blob/master/screenshots/mbs-analysis-screenshot3.png)
 
 
@@ -27,9 +26,15 @@ Deployed App on Heroku: https://mbs-analysis.herokuapp.com/
 1. `analysis.py`: Data Analysis using `pandas`
 	1. Clean raw CSV
 	2. Analyze using dataframes and dictionaries
-	3. Write analysis results to CSV files to be rendered in `app.py`
+	3. Write analysis results to CSV files stored in the `/data` folder (these CSV files are rendered in `app.py`)
+	4. Note: Executing `python analysis.py` will generate all the CSV files needed to display the results in `app.py`
 2. `app.py`: Web App created using Dash (Python framework built on Flask, React.js, and Plotly.js)
 	1. Render CSV files from `analysis.py` as graphs
 	2. Graphs have toggle option to show/hide bars
 	3. Hover over bars to reveal their numerical values
 	4. Analysis of each graph is located below the graph
+
+## Assumptions
+* I assumed that each trip designates a unique rider and that "regular user" indicates a user who bought a plan (Monthly Pass or Flex Pass).
+* Additionally, I initially cleaned the dataset before analysis, removing rows with any NaN values.
+* Furthermore, to calculate distance traveled by round trips, I assumed the round trip average speed could be estimated by the average speed of all one-way trips originating from the given station. If the given station did not have an average speed from one-way trips, I used the average speed of all one-way trips from any station.
