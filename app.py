@@ -135,11 +135,16 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
         children='Metro Bike Share - Bike Sharing in Los Angeles, CA',
         style={
         	'marginTop': '50px',
-        	'marginBottom': '80px',
+        	'marginBottom': '30px',
             'textAlign': 'center',
             'color': colors['text']
         }
     ),
+    html.H4(children="July 2016 to ​December 2016 / January 2017", style={
+        'textAlign': 'center',
+        'marginBottom': '70px',
+        'color': colors['text']
+        }),
 	html.Hr(),
 
     # Question 1a: Display Metric 1
