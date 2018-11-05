@@ -92,6 +92,11 @@ for i in range(24):
 	ssid_by_start_hour_list.append(pd.read_csv("data/bonus_2/ssid_by_start_hour_{hour}.csv".format(hour=hour)))
 	esid_by_end_hour_list.append(pd.read_csv("data/bonus_2/esid_by_end_hour_{hour}.csv".format(hour=hour)))
 
+# Bonus 3
+route_by_pass_type_F = pd.read_csv("data/bonus_3/route_by_pass_type_F.csv")
+route_by_pass_type_M = pd.read_csv("data/bonus_3/route_by_pass_type_M.csv")
+route_by_pass_type_W = pd.read_csv("data/bonus_3/route_by_pass_type_W.csv")
+
 
 # Colors
 colors = {
@@ -149,7 +154,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
 
     # Question 1a: Display Metric 1
     # (Average Bike Rentals and Returns Per Hour in a Day = Average Number of Trips by Start Hour and End Hour in a Day)
-    html.H2(children='Net Change of Bikes in a Day: Average Bike Rentals and Returns Per Hour', style=title_style),
+    html.H2(children='(1)  Net Change of Bikes in a Day: Average Bike Rentals and Returns Per Hour', style=title_style),
     dcc.Graph(
         id='trips-hour-graph',
         figure={
@@ -197,7 +202,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
 
 
     # Question 1b: Display average trip duration by passholder type
-    html.H2(children='Average Trip Duration by Passholder Type', style=title_style),
+    html.H2(children='(2)  Average Trip Duration by Passholder Type', style=title_style),
     dcc.Graph(
         id='avg-duration-by-pass-graph',
         figure={
@@ -227,7 +232,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
 
 
 	# Question 1c: Bike Effiency - Display number of trips and total duration by bike ID
-    html.H2(children='Bike Efficiency - Number of Trips and Total Trip Duration by Bike ID', style=title_style),
+    html.H2(children='(3)  Bike Efficiency - Number of Trips and Total Trip Duration by Bike ID', style=title_style),
     dcc.Graph(
         id='bike-graph',
         figure={
@@ -281,7 +286,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
 
 
     # Question 2: Display most popular stations graph
-    html.H2(children='Most Popular Stations', style=title_style),
+    html.H2(children='(4)  Most Popular Stations', style=title_style),
     dcc.Graph(
         id='popular-station-graph',
         figure={
@@ -323,7 +328,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
 
 
     # Question 3: Display distance/duration by starting station graph
-    html.H2(children='Total Distance and Avg Distance Per Trip By Starting Station ID', style=title_style),
+    html.H2(children='(5)  Total Distance and Avg Distance Per Trip By Starting Station ID', style=title_style),
     dcc.Graph(
         id='distance-by-ssid-graph',
         figure={
@@ -367,7 +372,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
 
 
     # Question 4: Display passholder type graph
-    html.H2(children='Passholder Types and Number of Regular Users', style=title_style),
+    html.H2(children='(6)  Passholder Types and Number of Regular Users', style=title_style),
     dcc.Graph(
         id='passholder-type-graph',
         figure={
@@ -390,7 +395,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
 
 
 	# Bonus 1: Seasonal Variations in Ridership: Display avg duration, total duration, and number of trips by start month
-    html.H2(children='Seasonal Variations in Ridership: Duration and Number of Trips Per Month', style=title_style),
+    html.H2(children='(7)  Seasonal Variations in Ridership: Duration and Number of Trips Per Month', style=title_style),
     dcc.Graph(
         id='duration-by-month-graph',
         figure={
@@ -425,9 +430,9 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
 	html.Hr(),
 
 	# Bonus 2: Net change of bikes over the course of a day, based on station ID
-	html.H2(children='Net Change of Bikes in a Day: Average Hourly Bike Rentals and Returns Per Station ID', style=title_style),
+	html.H2(children='(8)  Net Change of Bikes in a Day: Average Hourly Bike Rentals and Returns Per Station ID', style=title_style),
 
-	html.H3(children='Demand: Average Hourly Bike Rentals Per Station ID', style=title_style),
+	html.H3(children='(8a)  Demand: Average Hourly Bike Rentals Per Station ID', style=title_style),
 	generate_bonus_2_graph(ssid_by_start_hour_list, "rental"),
 	html.Div(children='Click on each Hour to toggle the bar graph.', style=notice_style),
 	html.Div(children='Stations with high demand (high avg hourly bike rentals) include Station #3030 '
@@ -436,7 +441,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
     	+ '2.16 rentals in Hour 19), and Station #3069 (2.41 rentals in Hour 13, 2.04 rentals in Hour 14).',
     	style=text_style),
 
-	html.H3(children='Supply: Average Hourly Bike Returns Per Station ID', style=title_style),
+	html.H3(children='(8b)  Supply: Average Hourly Bike Returns Per Station ID', style=title_style),
 	generate_bonus_2_graph(esid_by_end_hour_list, "return"),
 	html.Div(children='Click on each Hour to toggle the bar graph.', style=notice_style),
 	html.Div(children='Stations with high supply (high avg hourly bike returns) include Station #3014 '
@@ -454,6 +459,46 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'margin': 
     	style=text_style),
 	html.Hr(),
 
+
+    # Bonus 3: Trip Route vs. Passholder Type
+    html.H2(children='(9)  Trip Route vs. Passholder Type', style=title_style),
+    dcc.Graph(
+        id='route-pass-graph',
+        figure={
+            'data': [
+                {'x': list(route_by_pass_type_F["Route"]), 'y': list(route_by_pass_type_F["Frequency"]),
+                    'type': 'bar', 'name': 'Flex Pass'},
+                {'x': list(route_by_pass_type_M["Route"]), 'y': list(route_by_pass_type_M["Frequency"]),
+                    'type': 'bar', 'name': 'Monthly Pass'},
+                {'x': list(route_by_pass_type_W["Route"]), 'y': list(route_by_pass_type_W["Frequency"]),
+                    'type': 'bar', 'name': 'Walk-up'},
+            ],
+            'layout': {
+                'xaxis': {'title': 'Trip Route (starting_station-ending_station)', 'automargin': True},
+                'yaxis': {'title': 'Frequency'},
+                'font': {
+                    'size': 15,
+                    'color': colors['text'],
+                }
+            }
+        }
+    ),
+
+    html.Div(children='Click on "Flex Pass", "Monthly Pass", or "Walk-up" to toggle the bar graph.',
+        style=notice_style),
+    html.Div(children='Route 3030-3014 (Station #3030 to Station #3014) has the most monthly passes (618), '
+        + 'along with 38 flex passes and 38 walk-up passes. This suggests that this route may be a daily commute '
+        + 'to work for many people in LA. Likewise, other routes with high numbers of monthly passes and relatively'
+        + 'low numbers of the other two passes are also probably daily commute to work routes (3014-3016, 3030-3042 '
+        + '3005-3051, 3031-3005, 3014-3030, etc.). There are also some routes with more walk-ups, such as the round '
+        + 'trips 3006-3006, 3047-3047, 3075-3075, 3048-3048, etc. The observation that the routes dominated by walk-ups '
+        + 'tend to be round trips suggest that these locations may be tourist attractions because the bikers only rent '
+        + 'once and return the bike to the same location. A final observation is that the number of flex passes is '
+        + 'consistently quite low compared to the other two passes, indicating that their position as the "middle deal"'
+        + 'pass is not generally not as appealing as the two extremes. Perhaps, these passes may be gradually phased '
+        + 'out in favor of the other two, if their adoption does not grow.',
+        style=text_style),
+    html.Hr(),
 
 
     # List Assumptions made
