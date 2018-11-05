@@ -13,15 +13,15 @@ Deployed App on Heroku: https://mbs-analysis.herokuapp.com/
 
 ## Goals
 1. Data Visuals: Display or graph 3 metrics or trends from the data set that are interesting to you.
-	1. Metric 1: Average Bike Rentals and Returns Per Hour in a Day *(See Graph 1)/*
-	2. Metric 2: Average Trip Duration by Passholder Type *(See Graph 2)/*
-	3. Metric 3: Bike Efficiency - Number of Trips and Total Trip Duration by Bike ID *(See Graph 3)/*
-2. Which start/stop stations are most popular? *(See Graph 4)/*
-3. What is the average distance traveled? *(See Graph 5)/*
-4. How many riders include bike sharing as a regular part of their commute? *(See Graph 6)/*
-5. (Bonus 1) How does ridership change with seasons? *(See Graph 7)/*
-6. (Bonus 2) Is there a net change of bikes over the course of a day? If so, when and where should bikes be transported in order to make sure bikes match travel patterns? *(See Graph 8a, 8b)/*
-7. (Bonus 3) What is the breakdown of Trip Route Category-Passholder type combinations? What might make a particular combination more popular? *(See Graph 9)/*
+	1. Metric 1: Average Bike Rentals and Returns Per Hour in a Day *(See Graph 1)*
+	2. Metric 2: Average Trip Duration by Passholder Type *(See Graph 2)*
+	3. Metric 3: Bike Efficiency - Number of Trips and Total Trip Duration by Bike ID *(See Graph 3)*
+2. Which start/stop stations are most popular? *(See Graph 4)*
+3. What is the average distance traveled? *(See Graph 5)*
+4. How many riders include bike sharing as a regular part of their commute? *(See Graph 6)*
+5. (Bonus 1) How does ridership change with seasons? *(See Graph 7)*
+6. (Bonus 2) Is there a net change of bikes over the course of a day? If so, when and where should bikes be transported in order to make sure bikes match travel patterns? *(See Graph 8a, 8b)*
+7. (Bonus 3) What is the breakdown of Trip Route Category-Passholder type combinations? What might make a particular combination more popular? *(See Graph 9)*
 
 
 ## Design
