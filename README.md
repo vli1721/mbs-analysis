@@ -1,4 +1,4 @@
-# capital-one-challenge-2018
+# mbs-analysis
 Web app for analyzing bike share data for the 2018 Capital One SWE Summit Challenge  
 
 Deployed App on Heroku: https://mbs-analysis.herokuapp.com/  
