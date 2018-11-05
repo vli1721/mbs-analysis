@@ -24,5 +24,12 @@ Deployed App on Heroku: https://mbs-analysis.herokuapp.com/
 6. (Bonus) Is there a net change of bikes over the course of a day? If so, when and where should bikes be transported in order to make sure bikes match travel patterns?
 
 ## Design
-1. Data Analysis using `pandas`
-2. Web App created using Dash (Python framework built on Flask, React.js, and Plotly.js)
+1. `analysis.py`: Data Analysis using `pandas`
+	1. Clean raw CSV
+	2. Analyze using dataframes and dictionaries
+	3. Write analysis results to CSV files to be rendered in `app.py`
+2. `app.py`: Web App created using Dash (Python framework built on Flask, React.js, and Plotly.js)
+	1. Render CSV files from `analysis.py` as graphs
+	2. Graphs have toggle option to show/hide bars
+	3. Hover over bars to reveal their numerical values
+	4. Analysis of each graph is located below the graph
